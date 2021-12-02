@@ -2,11 +2,6 @@
 - hosts: all
   become: yes
   vars: 
-    authorized_key_list:
-      - name: root
-        authorized_keys:
-         - key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
-           state: present
     tomcat_version: 9.0.54
     tomcat_url: http://mirrors.estointernet.in/apache/tomcat/tomcat-{{tomcat_version.split(".")[0]}}/v{{tomcat_version}}/bin/apache-tomcat-{{tomcat_version}}.tar.gz
     tomcat_port: 8088
